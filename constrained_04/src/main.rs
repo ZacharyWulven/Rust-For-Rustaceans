@@ -153,8 +153,30 @@ impl CanUseCannotImplement for Foo {
     
 }
 
-fn main() {
+// fn main() {
 
-}
+// }
 
 // 6 重新导出
+
+
+fn main() {
+    let integer = Some(5);
+    let float = Some(5.0);
+}
+
+// 编译时展开
+enum Option_i32 {
+    Some(i32),
+    None,
+}
+enum Option_f64 {
+    Some(f64),
+    None,
+}
+// 展开后的 main 函数
+
+fn main() {
+    let integer = Option_i32::Some(5);
+    let float = Option_f64::Some(5.0);
+}
